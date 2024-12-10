@@ -1,7 +1,8 @@
 
 import React from 'react'
-import Home from './(unauthenticated)/home/page'
+import Product from './(unauthenticated)/Product/page'
 import Navbar from '@/components/navbar/page'
+import Footer from '@/components/footer/page'
 
 
 const Main = () => {
@@ -10,8 +11,9 @@ const Main = () => {
       
       <Navbar/>
       <div className='section'>
-      <Home/>
+      <Product/>
       </div>
+      <Footer/>
     </div>
   )
 }
