@@ -1,2 +1,2 @@
 # ecommerce
-Next.js|React.js|Tailwind
+React.js,Next.js,Tailwind
