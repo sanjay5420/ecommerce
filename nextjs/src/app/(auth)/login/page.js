@@ -1,8 +1,9 @@
 'use client'
-import { Button, Image, Input, Card } from '@nextui-org/react'
+import { Button, Input, Card } from '@nextui-org/react'
 import { useRouter } from 'next/navigation'
 import Link from 'next/link'
 import React from 'react'
+import Image from 'next/image'
 
 const Login = () => {
   const router = useRouter()
@@ -12,7 +13,7 @@ const Login = () => {
   return (
     <div className='flex justify-center items-center h-screen'>
       <Card className="flex flex-col md:flex-nowrap gap-5 w-96 p-9 items-center">
-        <Image src='ecom2.png' width={200} height={200}></Image>
+        <Image src='/m.png' width={200} height={200}/>
         <Input type="email" placeholder="Enter your email" />
         <Input type="password" placeholder="Enter Password" />
         <Button className='bg-myColor text-white w-[100%]'>Login</Button>

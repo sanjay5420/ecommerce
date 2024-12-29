@@ -1,5 +1,6 @@
 
 import { createSlice } from '@reduxjs/toolkit'
+import toast from 'react-hot-toast'
 
 const initialState = {
     cartItems: localStorage.getItem('cartItems') ? JSON.parse(localStorage.getItem('cartItems')) : [],
@@ -22,6 +23,8 @@ export const cartSlice = createSlice({
             } else {
                 state.cartItems.push(tempProduct)
                 localStorage.setItem('cartItems', JSON.stringify(state.cartItems))
+                toast.success(`Product added to Cart.`)
+
             }
 
 
@@ -34,13 +37,31 @@ export const cartSlice = createSlice({
                 }
 
             })
+            toast.success(`Product removed from Cart.`)
             localStorage.setItem('cartItems', JSON.stringify(state.cartItems))
         },
+        increaseQuantity: (state, action) => {
+            const itemIndex = state.cartItems.findIndex(
+                item => item.id === action.payload.id
+            )
+
+            if (state.cartItems[itemIndex].cartQuantity < 5) state.cartItems[itemIndex].cartQuantity += 1
+            localStorage.setItem('cartItems', JSON.stringify(state.cartItems))
+        },
+        decreaseQuantity: (state, action) => {
+            const itemIndex = state.cartItems.findIndex(
+                item => item.id === action.payload.id
+            )
+
+            if (state.cartItems[itemIndex].cartQuantity > 1) state.cartItems[itemIndex].cartQuantity -= 1
+            localStorage.setItem('cartItems', JSON.stringify(state.cartItems))
+        }
 
     },
+
 })
 
 
-export const { addToCart, removeFromCart } = cartSlice.actions
+export const { addToCart, removeFromCart, increaseQuantity, decreaseQuantity } = cartSlice.actions
 
 export default cartSlice.reducer

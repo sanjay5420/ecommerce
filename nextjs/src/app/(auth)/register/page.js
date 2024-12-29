@@ -2,8 +2,9 @@
 import React from 'react';
 import { Formik, Form } from 'formik';
 import * as Yup from 'yup';
-import { Input,Card,Button,Image } from '@nextui-org/react';
+import { Input,Card,Button} from '@nextui-org/react';
 import Link from 'next/link';
+import Image from 'next/image';
 
 const SignupSchema = Yup.object().shape({
   fullName: Yup.string()
@@ -27,9 +28,9 @@ export const Register = () => (
       
     <div className='flex justify-center items-center h-screen'>
     
-    <Card  className="flex flex-col md:flex-nowrap gap-3 w-[40%] p-8">
-    <Image src='ecom2.png' width={110} height={110}/>
-      <span className='text-2xl font-bold'>Welcome to Ecom.com</span>
+    <Card  className="flex flex-col md:flex-nowrap gap-3 w-[40%]  p-10">
+    <Image src='/m.png' width={110} height={110}/>
+      <span className='text-2xl font-bold'>Welcome to M.com</span>
     <span className='mb-5 text-[#A0A3A8]'>Welcome to our ecommerce app! We are happy to invite you to explore the amazing world of online shopping.</span>
     <Formik
       initialValues={{

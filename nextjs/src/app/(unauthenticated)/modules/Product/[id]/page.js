@@ -18,9 +18,9 @@ const SingleProduct = ({ params }) => {
     return (
         <div className='section'>
             <div>
-                <div className='flex p-7'>
-                    <div className='w-[50%]'><Image src={singleProduct?.image} width={350} height={350} /></div>
-                    <div className='w-[50%] text-2xl font-bold flex flex-col gap-5'>{singleProduct?.title}
+                <div className='flex flex-col md:flex-row p-7 justify-center items-center p-10 mt-10'>
+                    <div className='md:w-[50%] flex justify-center items-center'><Image src={singleProduct?.image} width={300} height={300} /></div>
+                    <div className='md:w-[50%] text-2xl font-bold flex flex-col gap-5'>{singleProduct?.title}
                         <p className='font-light text-sm'>{singleProduct?.description}</p>
                         <Button className='w-32' onClick={() => dispatch(addToCart(singleProduct))}>Add to Cart</Button>
                     </div>
