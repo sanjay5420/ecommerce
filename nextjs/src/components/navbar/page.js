@@ -40,7 +40,7 @@ const Navbar = () => {
             {navigation.map((item) => {
               return (
                 <Link
-                  href={item.path}
+                  onClick={()=> router.push(item.path)}
                   className="mr-5 hover:underline underline-offset-4 decoration-orange-500 text-gray-600 text-xl"
                 >
                   <span className="font-sans">{item.name}</span>
