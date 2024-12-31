@@ -7,7 +7,7 @@ const Category = ({params}) => {
   const router = useRouter()
   const [category, setCategory] = useState()
   const getCategory = async () => {
-    const res = await fetch(`https://fakestoreapi.com/products/category/${params.id}`)
+    const res = await fetch(process.env.NEXT_PUBLIC_API_URL+`/products/category/${params.id}`)
     const data = await res.json()
     setCategory(data)
   }

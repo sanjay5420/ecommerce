@@ -8,7 +8,7 @@ const Home = () => {
   const [product, setProduct] = useState([])
   const router = useRouter()
   const getAllProduct = async () => {
-    const res = await fetch('https://fakestoreapi.com/products')
+    const res = await fetch(process.env.NEXT_PUBLIC_API_URL + '/products')
     const data = await res.json()
     setProduct(data)
   }
