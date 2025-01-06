@@ -9,7 +9,7 @@ const Cart = () => {
     const dispatch = useDispatch()
     const [productTotal, setProductTotal] = useState()
     const [discount, setDiscount] = useState(10)
-    const { cartTotal, cartItems } = useSelector(state => state.cart)
+    const {cartItems} = useSelector(state => state.cart)
 
     const subTotal = () => {
         const total = cartItems.reduce((acc, item) => {
