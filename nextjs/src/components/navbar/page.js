@@ -4,7 +4,7 @@ import { Link } from "@nextui-org/react";
 import axios from "axios";
 import Image from "next/image";
 import { useRouter } from "next/navigation";
-import React, { useEffect, useState } from "react";
+import React, {useEffect} from "react";
 import { CiShoppingCart } from "react-icons/ci";
 import { useDispatch, useSelector } from "react-redux";
 
@@ -32,9 +32,6 @@ const Navbar = () => {
     },
   ];
 
-  useEffect(() => {
-    getUser()
-  }, [])
   const getUser = async () => {
     const token = userToken?.access_token
     try {
@@ -49,10 +46,11 @@ const Navbar = () => {
     } catch (error) {
       console.log(error)
     }
-
   }
 
-
+  useEffect(() => {
+    getUser()
+  }, [])
 
   return (
     <div className="shadow-md">

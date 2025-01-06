@@ -6,16 +6,14 @@ import React, { useState } from 'react'
 import Image from 'next/image'
 import axios from 'axios'
 import toast from 'react-hot-toast'
-import { useDispatch, useSelector } from 'react-redux'
-import { getUserDetails, loginUser } from '@/redux/reducerSlices/userSlice'
+import {useDispatch} from 'react-redux'
+import {loginUser} from '@/redux/reducerSlices/userSlice'
 
 const Login = () => {
   const [email, setEmail] = useState('')
   const [password, setPassword] = useState('')
   const router = useRouter()
   const dispatch = useDispatch()
-
-  const {userToken,userDetails} = useSelector(state => state.user)
 
   const handleSubmit = async () => {
     const values = { email, password }
@@ -26,25 +24,12 @@ const Login = () => {
         dispatch(loginUser(data))
         toast.success('Success')
       }
-
     } catch (error) {
       toast.error('Incorrect Credentials')
       console.log(error?.message)
     }
   }
     
- 
- 
-  // const userDetails1 = async() => {
-
-//     const { data } = await axios.get('https://api.escuelajs.co/api/v1/auth/profile',{
-//         headers:{
-//             Authorization: `Bearer ${token}`
-//         }
-//     })
-//     if(data)dispatch(getUserDetails(data))
-// }
-
   const handleRegister = () => {
     router.push("/register")
   }
