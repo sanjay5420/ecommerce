@@ -8,6 +8,11 @@ export default function CategoryForm({ handleSubmit, type, item }) {
     const [image, setImage] = useState(item ? item.image : '')
     const values = { name, image }
 
+    const onSubmit = () => {
+        handleSubmit(values)
+        setName('')
+        setImage('')
+    }
     return (
         <>
             <Button onPress={onOpen}>{type} Category</Button>
@@ -25,8 +30,8 @@ export default function CategoryForm({ handleSubmit, type, item }) {
                                 <Button color="danger" variant="light" onPress={onClose}>
                                     Cancel
                                 </Button>
-                                <Button color="primary" onPress={onClose} onClick={() => { handleSubmit(values) }}>
-                                    Add
+                                <Button color="primary" onPress={onClose} onClick={onSubmit}>
+                                    {type}
                                 </Button>
                             </ModalFooter>
                         </>
