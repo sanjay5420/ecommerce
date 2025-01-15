@@ -2,18 +2,20 @@
 import { Button, Input, Card } from '@nextui-org/react'
 import { useRouter } from 'next/navigation'
 import Link from 'next/link'
-import React, { useState } from 'react'
+import React, { useEffect, useRef, useState } from 'react'
 import Image from 'next/image'
 import axios from 'axios'
 import toast from 'react-hot-toast'
-import {useDispatch} from 'react-redux'
-import {loginUser} from '@/redux/reducerSlices/userSlice'
+import { useDispatch } from 'react-redux'
+import { loginUser } from '@/redux/reducerSlices/userSlice'
 
 const Login = () => {
   const [email, setEmail] = useState('')
   const [password, setPassword] = useState('')
   const router = useRouter()
   const dispatch = useDispatch()
+  const inputRef = useRef()
+
 
   const handleSubmit = async () => {
     const values = { email, password }
@@ -29,7 +31,9 @@ const Login = () => {
       console.log(error?.message)
     }
   }
-    
+  useEffect(() => {
+    if (inputRef.current) inputRef.current.focus()
+  }, [])
   const handleRegister = () => {
     router.push("/register")
   }
@@ -42,6 +46,7 @@ const Login = () => {
           placeholder="Enter your email"
           value={email}
           onChange={(e) => { setEmail(e.target.value) }}
+          ref={inputRef}
         />
         <Input
           type="password"

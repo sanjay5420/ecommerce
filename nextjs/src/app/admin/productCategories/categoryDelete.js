@@ -9,7 +9,7 @@ import {
 } from "@nextui-org/react";
 import { FaTrash } from "react-icons/fa";
 
-export default function TrashForm(props) {
+export default function TrashForm({handleDelete,item}) {
     const { isOpen, onOpen, onOpenChange } = useDisclosure();
 
     return (
@@ -35,7 +35,7 @@ export default function TrashForm(props) {
                                 <Button color="primary" variant="light" onPress={onClose}>
                                     Cancel
                                 </Button>
-                                <Button color="danger" onPress={onClose} onClick={()=>{props.handleDelete(props.category.id)}}>
+                                <Button color="danger" onPress={onClose} onClick={()=>{handleDelete(item.id)}}>
                                     Delete
                                 </Button>
                             </ModalFooter>
