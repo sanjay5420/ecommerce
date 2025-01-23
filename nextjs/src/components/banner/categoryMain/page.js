@@ -23,7 +23,7 @@ const CategoryMain = () => {
       </div>
       <div className=' flex flex-col md:flex-row gap-4 py-5'>
         {category?.map((item) => {
-          return <div key={item} className='w-full md:w-[25%] p-5 h-32 rounded-3xl md:text-2xl capitalize flex items-center justify-center font-sans font-light transition ease-in-out delay-50 bg-gray-100 hover:-translate-y-1 hover:scale-110 hover:bg-orange-200 duration-200 cursor-pointer' onClick={()=>router.push(`./modules/category/${item}`)} >
+          return <div key={item} className='w-full md:w-[25%] p-5 h-32 rounded-3xl md:text-2xl capitalize flex items-center justify-center font-sans font-light transition ease-in-out delay-50 bg-gray-100 hover:-translate-y-1 hover:scale-110 hover:bg-orange-200 duration-200 cursor-pointer' onClick={()=>router.push(`./category/${item}`)} >
             <p className='font-sans font-light'>{item}</p>
           </div>
 
