@@ -29,7 +29,7 @@ const Navbar = () => {
     },
     {
       name: "Contact",
-      path: "/",
+      path: "/modules/contact",
     },
   ];
 
@@ -72,7 +72,7 @@ const Navbar = () => {
                   onClick={() => router.push(item.path)}
                   className="mr-5 hover:underline underline-offset-4 decoration-orange-500 text-gray-600 text-xl"
                 >
-                  <span className="font-sans">{item.name}</span>
+                  <span className="font-sans cursor-pointer">{item.name}</span>
                 </Link>
               );
             })}
@@ -109,11 +109,11 @@ const Navbar = () => {
               </div>
             </div>}
 
-          <div className="relative">
-            <span className="absolute right-[50%] top-[25%]">{cartItems.length > 0 && cartItems.length}</span>
+          <div className="relative"   onClick={() => router.push("/modules/cart")}>
+            <span className="absolute md:right-[50%] md:top-[25%] right-[50%] top-[9%] cursor-pointer">{cartItems.length > 0 && cartItems.length}</span>
             <CiShoppingCart
-              className="md:text-5xl text-3xl mr-3"
-              onClick={() => router.push("/modules/cart")}
+              className="md:text-5xl text-3xl mr-3 cursor-pointer"
+            
             />
           </div>
         </div>

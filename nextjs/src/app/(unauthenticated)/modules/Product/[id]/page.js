@@ -22,6 +22,7 @@ const SingleProduct = ({ params }) => {
                     <div className='md:w-[50%] flex justify-center items-center'><Image src={singleProduct?.image} width={300} height={300} /></div>
                     <div className='md:w-[50%] text-2xl font-bold flex flex-col gap-5'>{singleProduct?.title}
                         <p className='font-light text-sm'>{singleProduct?.description}</p>
+                        <h1>$ {singleProduct?.price}</h1>
                         <Button className='w-32' onClick={() => dispatch(addToCart(singleProduct))}>Add to Cart</Button>
                     </div>
                 </div>

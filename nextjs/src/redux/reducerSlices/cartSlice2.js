@@ -3,7 +3,7 @@ import { createSlice } from '@reduxjs/toolkit'
 import toast from 'react-hot-toast'
 // typeof window !== 'undefined' && 
 const initialState = {
-    cartItems: [],
+    cartItems: localStorage.getItem('cartItems') ? JSON.parse(localStorage.getItem('cartItems')) : [],
     cartTotal: 0,
 }
 
@@ -22,7 +22,9 @@ export const cartSlice = createSlice({
                 return
             } else {
                 state.cartItems.push(tempProduct)
+                localStorage.setItem('cartItems', JSON.stringify(state.cartItems))
                 toast.success(`Product added to Cart.`)
+
             }
 
 
@@ -36,6 +38,7 @@ export const cartSlice = createSlice({
 
             })
             toast.success(`Product removed from Cart.`)
+            localStorage.setItem('cartItems', JSON.stringify(state.cartItems))
         },
         increaseQuantity: (state, action) => {
             const itemIndex = state.cartItems.findIndex(
@@ -43,7 +46,7 @@ export const cartSlice = createSlice({
             )
 
             if (state.cartItems[itemIndex].cartQuantity < 5) state.cartItems[itemIndex].cartQuantity += 1
-      
+            localStorage.setItem('cartItems', JSON.stringify(state.cartItems))
         },
         decreaseQuantity: (state, action) => {
             const itemIndex = state.cartItems.findIndex(
@@ -51,7 +54,7 @@ export const cartSlice = createSlice({
             )
 
             if (state.cartItems[itemIndex].cartQuantity > 1) state.cartItems[itemIndex].cartQuantity -= 1
-    
+            localStorage.setItem('cartItems', JSON.stringify(state.cartItems))
         }
 
     },

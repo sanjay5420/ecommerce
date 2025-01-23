@@ -12,7 +12,6 @@ const Main = () => {
 
   return (
     <div>
-      
       <Navbar />
       <Banner/>
       <CategoryMain/>
