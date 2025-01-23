@@ -61,7 +61,7 @@ const Navbar = () => {
         <div className="mx-auto flex flex-wrap p-1 flex-col md:flex-row items-center">
           <span className="flex title-font font-medium items-center text-gray-900 mb-4 md:mb-0">
             <Link onClick={() => router.push('/')}>
-              <Image src="/m.png" width={80} height={80} className="md:ml-5" />
+              <Image alt="logo" src="/m.png" width={80} height={80} className="md:ml-5" />
             </Link>
           </span>
           <nav className="md:ml-auto md:mr-auto flex flex-wrap items-center text-base justify-center ">

@@ -11,8 +11,8 @@ const CategoryList = ({category,handleDelete}) => {
         <div>
             <div className='flex gap-4 justify-center flex-wrap'>
                 {category.map((item) => {
-                    return <div className='p-5 rounded bg-gray-200 flex flex-col gap-3'>
-                        <Image src={item.image} width={150} />
+                    return <div className='p-5 rounded bg-gray-200 flex flex-col gap-3' key={item}>
+                        <Image alt='img' src={item.image} width={150} />
                         <div>
                             {item.name}
                         </div>

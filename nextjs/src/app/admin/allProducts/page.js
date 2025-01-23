@@ -16,8 +16,8 @@ const AllProducts = () => {
   return (
     <div className='flex flex-wrap'>
       {products.map((item) => {
-        return <div className='p-5 w-48'>
-          <Image src={item.images}/>
+        return <div className='p-5 w-48' key={item}>
+          <Image alt='img' src={item.images}/>
           {item.title}
           {item.price}
         </div>

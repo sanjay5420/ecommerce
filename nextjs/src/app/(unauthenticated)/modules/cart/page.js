@@ -33,7 +33,7 @@ const Cart = () => {
                 <div className='md:w-[75%] flex flex-col gap-5 mt-5 border border-gray-200'>
                     {cartItems.length > 0 ? cartItems.map((item) => {
                         return (
-                            <div>
+                            <div key={item.id}>
                                 <div className='flex flex-col md:flex-row justify-evenly gap-5 md:items-center p-5 border border-gray-200'>
 
                                     <div className='md:w-[50%] flex gap-3 h-20 items-center' >

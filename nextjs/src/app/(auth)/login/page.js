@@ -40,7 +40,7 @@ const Login = () => {
   return (
     <div className='flex justify-center items-center h-screen'>
       <Card className="flex flex-col md:flex-nowrap gap-5 w-96 p-9 items-center">
-        <Image src='/m.png' width={200} height={200} />
+        <Image alt='logo' src='/m.png' width={200} height={200} />
         <Input
           type="email"
           placeholder="Enter your email"
