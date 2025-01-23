@@ -20,7 +20,7 @@ const Category = ({params}) => {
       <div className='flex flex-col md:flex-row flex-wrap gap-5 justify-center md:mt-10'>
         {category?.map((item) => {
           return <div key={item} className='px-5 pt-3 bg-gray-50 shadow-xl gap-3 rounded-lg w-72 h-96 flex flex-col justify-evenly mb-5 mt-5 border '>
-            <div className='flex justify-center ' onClick={() => router.push(`/modules/Product/${item.id}`)}>
+            <div className='flex justify-center ' onClick={() => router.push(`/products/${item.id}`)}>
               <Image src={item.image} alt='img' width={200} height={200} />
 
             </div>

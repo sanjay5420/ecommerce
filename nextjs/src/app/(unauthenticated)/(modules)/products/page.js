@@ -24,7 +24,7 @@ const Home = () => {
         {product?.map((item) => {
           return (
             <div key={item.id} className='px-5 pt-3 bg-gray-50 shadow-xl gap-3 rounded-lg w-72 h-96 flex flex-col justify-evenly mb-5 mt-5 border '>
-              <div className='flex justify-center ' onClick={() => router.push(`/modules/Product/${item.id}`)}>
+              <div className='flex justify-center ' onClick={() => router.push(`/products/${item.id}`)}>
                 <Image src={item.image} width={200} height={200} className='' />
 
               </div>
