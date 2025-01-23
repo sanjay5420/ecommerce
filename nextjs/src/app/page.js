@@ -1,5 +1,5 @@
 'use client'
-import Product from './(unauthenticated)/modules/Product/page'
+import Product from './(unauthenticated)/(modules)/products/page'
 import Navbar from '@/components/navbar/page'
 import Footer from '@/components/footer/page'
 import Banner from '@/components/banner/page'

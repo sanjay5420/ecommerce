@@ -21,7 +21,7 @@ const Navbar = () => {
     },
     {
       name: "Products",
-      path: "/modules/Product",
+      path: "/products",
     },
     {
       name: "About",
@@ -29,7 +29,7 @@ const Navbar = () => {
     },
     {
       name: "Contact",
-      path: "/modules/contact",
+      path: "/contact",
     },
   ];
 
@@ -109,7 +109,7 @@ const Navbar = () => {
               </div>
             </div>}
 
-          <div className="relative"   onClick={() => router.push("/modules/cart")}>
+          <div className="relative"   onClick={() => router.push("/cart")}>
             <span className="absolute md:right-[50%] md:top-[25%] right-[50%] top-[9%] cursor-pointer">{cartItems.length > 0 && cartItems.length}</span>
             <CiShoppingCart
               className="md:text-5xl text-3xl mr-3 cursor-pointer"
