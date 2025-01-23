@@ -7,7 +7,7 @@ const Footer = () => {
     return (
         <div className='w-full shadow-2xl bg-gray-200 mt-16 pt-10 pb-20'>
             <div className='section flex flex-col md:flex-row md:justify-between gap-4'>
-                <div className='lg:w-[50%] w-full'><Image src='/m.png' width={100} height={100} />
+                <div className='lg:w-[50%] w-full'><Image alt='logo' src='/m.png' width={100} height={100} />
                     <p className='font-thin text-lg'>Welcome to <b>M</b>, your one-stop destination for all things. We offer a wide range of high-quality products designed to enhance your lifestyle and bring you the best value for your money. We are committed to delivering convenience right to your doorstep.Shop with us and experience top-notch customer service every step of the way. Happy shopping!</p>
                 </div>
 

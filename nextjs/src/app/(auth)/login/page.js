@@ -55,7 +55,7 @@ const Login = () => {
           onChange={(e) => { setPassword(e.target.value) }}
         />
         <Button className='bg-myColor text-white w-[100%]' onClick={handleSubmit}>Login</Button>
-        <p>Don't have an account yet? <Link
+        <p>Dont have an account yet? <Link
           onClick={handleRegister} className='font-bold text-myColor' href={"/register"}>Register Here.</Link> </p>
       </Card>
     </div>

@@ -10,7 +10,7 @@ const Banner = () => {
                     <p>Your one-stop destination for all things. We offer a wide range of high-quality products designed to enhance your lifestyle and bring you the best value for your money.</p>
                 </div>
                 <div className='w-full md:w-[50%] flex justify-end items-center'>
-                    <img className='' alt='banner' src='/banner.png' width={400}/>
+                    <Image className='' alt='banner' src='/banner.png' width={400}/>
                 </div>
             </div>
         </div>

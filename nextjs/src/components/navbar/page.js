@@ -52,7 +52,7 @@ const Navbar = () => {
   useEffect(() => {
    if(isLoggedIn) getUser()
   
-  }, [])
+  }, [isLoggedIn])
 
   return (
     <div className="shadow-md">
