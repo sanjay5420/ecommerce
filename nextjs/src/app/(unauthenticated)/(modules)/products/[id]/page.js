@@ -16,7 +16,7 @@ const SingleProduct = ({ params }) => {
         getProduct()
     }, [])
     return (
-        <div className='section'>
+        <div className='md:w-[80%] md:ml-auto md:mr-auto mt-8 w-[90%] ml-auto mr-auto'>
             <div>
                 <div className='flex flex-col md:flex-row justify-center items-center p-10 mt-10 gap-5'>
                     <div className='md:w-[50%] flex justify-center items-center'><Image src={singleProduct?.image} width={300} height={300} /></div>

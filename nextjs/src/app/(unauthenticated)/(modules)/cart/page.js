@@ -48,7 +48,7 @@ const Cart = () => {
                                         <div className='p-3'>{item.cartQuantity}</div>
                                         <button className='px-2 rounded bg-gray-200 shadow-lg hover:bg-gray-300' onClick={() => dispatch(increaseQuantity(item))}>+</button>
                                     </div>
-                                    <div className='md:w-[25%] '>${item.cartQuantity * item.price.toFixed(0)}</div>
+                                    <div className='md:w-[25%] font-bold '>${item.cartQuantity * item.price.toFixed(0)}</div>
 
                                 </div>
 

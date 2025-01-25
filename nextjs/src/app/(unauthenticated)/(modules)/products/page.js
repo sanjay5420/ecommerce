@@ -1,5 +1,4 @@
 'use client'
-import Footer from '@/components/footer/page'
 import { Image } from '@nextui-org/react'
 import { useRouter } from 'next/navigation'
 import React, { useEffect, useState } from 'react'
@@ -24,8 +23,8 @@ const Home = () => {
         {product?.map((item) => {
           return (
             <div key={item.id} className='px-5 pt-3 bg-gray-50 shadow-xl gap-3 rounded-lg w-72 h-96 flex flex-col justify-evenly mb-5 mt-5 border '>
-              <div className='flex justify-center ' onClick={() => router.push(`/products/${item.id}`)}>
-                <Image src={item.image} width={200} height={200} className='' />
+              <div className='flex justify-center' onClick={() => router.push(`/products/${item.id}`)}>
+                <Image src={item.image} width={200} height={200} />
 
               </div>
               <div className='flex flex-col justify-start gap-1 mt-2'>
