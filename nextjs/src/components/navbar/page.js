@@ -110,7 +110,7 @@ const Navbar = () => {
             </div>}
 
           <div className="relative"   onClick={() => router.push("/cart")}>
-            <span className="absolute md:right-[50%] md:top-[25%] right-[50%] top-[15%] cursor-pointer text-md">{cartItems.length > 0 && cartItems.length}</span>
+            <span className="absolute md:right-[50%] md:top-[25%] right-[50%] top-[16%] cursor-pointer text-md">{cartItems.length > 0 && cartItems.length}</span>
             <CiShoppingCart
               className="md:text-5xl text-4xl mr-3 cursor-pointer"
             
