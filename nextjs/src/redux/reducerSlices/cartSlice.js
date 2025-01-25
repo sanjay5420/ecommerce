@@ -1,6 +1,8 @@
 
 import { createSlice } from '@reduxjs/toolkit'
 import toast from 'react-hot-toast'
+import { TiWarning } from "react-icons/ti";
+
 // typeof window !== 'undefined' && 
 const initialState = {
     cartItems: [],
@@ -43,7 +45,13 @@ export const cartSlice = createSlice({
             )
 
             if (state.cartItems[itemIndex].cartQuantity < 5) state.cartItems[itemIndex].cartQuantity += 1
+      else{
+   
+        toast('Product Quantity is limited to 5.', {
+            icon: '⚠️',
+          });
       
+      }
         },
         decreaseQuantity: (state, action) => {
             const itemIndex = state.cartItems.findIndex(

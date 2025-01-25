@@ -2,7 +2,6 @@
 import { increaseQuantity, removeFromCart, decreaseQuantity } from '@/redux/reducerSlices/cartSlice'
 import { Button, Image, Input } from '@nextui-org/react'
 import React, { useEffect, useState } from 'react'
-import { FaTrash } from 'react-icons/fa'
 import { useDispatch, useSelector } from 'react-redux'
 
 const Cart = () => {
@@ -21,8 +20,8 @@ const Cart = () => {
         subTotal()
     }, [cartItems])
     return (
-        <div className='section mt-8'>
-            <div className='md:w-[75%] flex justify-between p-5 gap-5 shadow-md items-center collapse md:visible'>
+        <div className='md:w-[80%] md:ml-auto md:mr-auto mt-8 w-[90%] ml-auto mr-auto'>
+            <div className='lg:w-[75%] w-[100%] flex justify-between p-5 gap-5 shadow-md items-center collapse md:visible'>
                 <div className='md:w-[50%]' >Product</div>
                 <div className='md:w-[25%]'>Quantity</div>
                 <div className='md:w-[25%]'>Price</div>
@@ -30,24 +29,24 @@ const Cart = () => {
             </div>
             <div className='flex flex-col lg:flex-row '>
 
-                <div className='md:w-[75%] flex flex-col gap-5 mt-5 border border-gray-200'>
+                <div className='lg:w-[75%] flex flex-col gap-5 mt-2'>
                     {cartItems.length > 0 ? cartItems.map((item) => {
                         return (
                             <div key={item.id}>
                                 <div className='flex flex-col md:flex-row justify-evenly gap-5 md:items-center p-5 border border-gray-200'>
 
-                                    <div className='md:w-[50%] flex gap-3 h-20 items-center' >
-                                        <Image src={item.image} width={50} height={50} />
-                                        <div>
+                                    <div className='md:w-[50%] flex gap-3 items-center' >
+                                        <Image src={item.image} width={60} height={60} />
+                                        <div className='flex flex-col gap-1'>
                                             <p className='md:line-clamp-1'>{item.title}</p>
-                                            <p className='text-orange-400 italic capitalize'>{item.category}</p>
-                                            <FaTrash onClick={() => { dispatch(removeFromCart(item)) }} />
+                                            <p className='text-orange-400 capitalize'>{item.category}</p>
+                                            <span className='cursor-pointer bg-transparent italic text-red-500 ' onClick={() => { dispatch(removeFromCart(item)) }} >Remove</span>
                                         </div>
                                     </div>
                                     <div className='flex items-center md:w-[25%]'>
-                                        <button className='p-1' onClick={() => dispatch(decreaseQuantity(item))} >-</button>
+                                        <button className='px-2 rounded bg-gray-200 shadow-lg' onClick={() => dispatch(decreaseQuantity(item))} >-</button>
                                         <div className='p-3'>{item.cartQuantity}</div>
-                                        <button className='p-1' onClick={() => dispatch(increaseQuantity(item))}>+</button>
+                                        <button className='px-2 rounded bg-gray-200 shadow-lg hover:bg-gray-300' onClick={() => dispatch(increaseQuantity(item))}>+</button>
                                     </div>
                                     <div className='md:w-[25%] '>${item.cartQuantity * item.price.toFixed(0)}</div>
 
@@ -59,7 +58,7 @@ const Cart = () => {
                     }) : (<div className='font-sans text-3xl p-5 flex justify-center mt-10'><p>Your Cart is Empty</p></div>)}
                 </div>
 
-                <div className='lg:w-[25%]  flex p-2 '>
+                <div className='lg:w-[25%] flex p-2 justify-center md:justify-normal'>
                     <div className='border border-gray-200 flex flex-col gap-5 p-3'>
 
                         <div>
@@ -81,7 +80,9 @@ const Cart = () => {
                                 <div className='text-gray-700'>$ {discount}</div>
                                 <div className='text-xl font-semibold'>$ {productTotal == 0 ? productTotal : productTotal * 1 + discount}</div>
                             </div>
+                            
                         </div>
+                        <Button className='bg-orange-500 text-white hover:bg-pink-500'>Checkout</Button>
                     </div>
                 </div>
 

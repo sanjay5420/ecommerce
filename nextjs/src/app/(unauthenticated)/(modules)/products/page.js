@@ -19,7 +19,7 @@ const Home = () => {
   return (
     <div className='section'>
       <div className='text-gray-800 font-extrabold text-2xl md:mt-10 mb-5'>Featured Products</div>
-      <div className='flex flex-col md:flex-row flex-wrap gap-5 justify-center md:mt-10 md:pb-20'>
+      <div className='flex flex-col md:flex-row flex-wrap gap-3 justify-center md:mt-10 md:pb-20'>
 
         {product?.map((item) => {
           return (
