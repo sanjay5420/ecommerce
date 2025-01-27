@@ -39,7 +39,7 @@ const Login = () => {
   }
   return (
     <div className='flex justify-center items-center h-screen bg-gradient-to-t from-orange-300 to-orange-50'>
-      <Card className="flex flex-col md:flex-nowrap gap-5 w-96 p-9 items-center shadow-none lg:shadow-md bg-gradient-to-t from-orange-300 to-orange-50">
+      <Card className="flex flex-col md:flex-nowrap gap-5 w-96 p-9 items-center shadow-none justify-center md:h-[90%] h-full lg:shadow-md bg-gradient-to-t from-orange-300 to-orange-50">
         <Image alt='logo' src='/m.png' width={200} height={200} />
         <Input
           type="email"
