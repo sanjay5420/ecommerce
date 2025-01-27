@@ -57,7 +57,7 @@ const Navbar = () => {
   return (
     <div className="shadow-md">
 
-      <header className="text-gray-600 w-[80%] ml-auto mr-auto">
+      <header className="text-gray-600 md:w-[80%] md:ml-auto md:mr-auto w-[90%]  ml-auto mr-auto">
         <div className="mx-auto flex flex-wrap p-1 flex-col md:flex-row items-center">
           <span className="flex title-font font-medium items-center text-gray-900 mb-4 md:mb-0">
             <Link onClick={() => router.push('/')}>

@@ -16,9 +16,9 @@ const SingleProduct = ({ params }) => {
         getProduct()
     }, [])
     return (
-        <div className='md:w-[80%] md:ml-auto md:mr-auto mt-8 w-[90%] ml-auto mr-auto'>
+        <div className='md:w-[80%] md:ml-auto md:mr-auto mt-8 ml-auto mr-auto'>
             <div>
-                <div className='flex flex-col md:flex-row justify-center items-center p-10 mt-10 gap-5'>
+                <div className='flex flex-col md:flex-row justify-center items-center py-8 lg:p-9 px-3 mt-10 gap-5'>
                     <div className='md:w-[50%] flex justify-center items-center'><Image src={singleProduct?.image} width={300} height={300} /></div>
                     <div className='md:w-[50%] text-2xl font-bold flex flex-col gap-5 p-5'>{singleProduct?.title}
                         <p className='font-light text-sm'>{singleProduct?.description}</p>

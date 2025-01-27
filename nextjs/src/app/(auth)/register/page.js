@@ -26,12 +26,12 @@ const SignupSchema = Yup.object().shape({
 
 export const Register = () => (
       
-    <div className='flex justify-center items-center h-screen'>
+    <div className='flex justify-center items-center h-screen bg-gradient-to-t from-orange-300 to-orange-50'>
     
-    <Card  className="flex flex-col md:flex-nowrap gap-3 w-[40%]  p-10">
+    <Card  className="flex flex-col md:flex-nowrap gap-3 lg:w-[40%] md:w-[70%] h-full justify-center shadow-none lg:shadow-md px-8 pb-5 bg-gradient-to-t from-orange-300 to-orange-50">
     <Image src='/m.png' width={110} height={110}/>
-      <span className='text-2xl font-bold'>Welcome to M.com</span>
-    <span className='mb-5 text-[#A0A3A8]'>Welcome to our ecommerce app! We are happy to invite you to explore the amazing world of online shopping.</span>
+      <span className='md:text-2xl font-bold'>Welcome to M.com</span>
+    <span className='mb-5 text-sm md:text-md text-[#A0A3A8]'>Welcome to our ecommerce app! We are happy to invite you to explore the amazing world of online shopping.</span>
     <Formik
       initialValues={{
         fullName: '',
@@ -40,7 +40,6 @@ export const Register = () => (
       }}
       validationSchema={SignupSchema}
       onSubmit={values => {
-        // same shape as initial values
         console.log(values);
       }}
     >
@@ -66,11 +65,8 @@ export const Register = () => (
           <Input name="confirmPassword" type="password"placeholder="Confirm Password" onChange={handleChange} className={errors.confirmPassword ? 'border border-red-600 rounded-xl':null}/>
           {errors.confirmPassword && touched.confirmPassword ? <div className='text-red-500 text-sm'>{errors.confirmPassword}</div> : null}
 
-         
-
-          
           <Button type="submit" className='bg-myColor text-white'>Sign Up</Button>
-          <p className='text-sm text-myColor'>Already have an account ? <Link className='font-bold' href={"/login"}>Login.</Link> </p>
+          <p className='text-sm '>Already have an account ? <Link className='font-bold text-orange-600' href={"/login"}>Login.</Link> </p>
         </Form>
       )}
     </Formik>
@@ -80,35 +76,3 @@ export const Register = () => (
 );
 
 export default Register
-
-
-
-
-// import React from 'react'
-// import { Formik, Form, Field } from 'formik';
-// import * as Yup from 'yup';
-// import { Button, Image, Input,Card } from '@nextui-org/react'
-// import Link from 'next/link'
-// import {DatePicker} from "@nextui-org/date-picker";
-// const Register = () => {
-    
-//     return (
-
-//         <div className='flex justify-center items-center h-screen'>
-//             <Card className="flex flex-col md:flex-nowrap gap-3 w-96 p-9">
-//                 <Image src='/logo.png'></Image>
-//                 <Input type="email" placeholder="Enter Fullname" />
-//                 <Input type="email" placeholder="Enter Email" />
-//                 <Input type="number" placeholder="Enter Phone Number" />
-//                 <DatePicker label="Birth date" />
-//                 <Input type="password" placeholder="Enter Password" />
-//                 <Input type="password" placeholder="Confirm Password" />
-
-//                 <Button className='bg-blue-400 text-white'>Register</Button>
-//                 <p>Already have an account ? <Link className='font-bold' href={"/"}>Login.</Link> </p>
-//             </Card>
-//         </div>
-//     )
-// }
-
-// export default Register

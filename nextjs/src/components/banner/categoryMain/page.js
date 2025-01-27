@@ -17,7 +17,7 @@ const CategoryMain = () => {
 
 
   return (
-    <div className='section'>
+    <div className='md:w-[80%] md:ml-auto md:mr-auto w-[90%]  ml-auto mr-auto mt-10'>
       <div className='py-5'>
         <span className='font-sans font-bold text-2xl'>Browse Through The Categories</span>
       </div>
